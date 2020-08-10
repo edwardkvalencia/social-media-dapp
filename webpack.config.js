@@ -22,12 +22,19 @@ module.exports = {
                 use: {
                     loader: 'html-loader'
                 }
+            }, {
+                test: /\.css$/,
+                exclude: /node_modules/,
+                use: [
+                    { loader: 'style-loader' },
+                    { loader: 'css-loader' }
+                ]
             }
         ]
     },
     plugins: [
         new html({
-            title: "dApp project",
+            title: "social media dapp",
             template: './src/index.ejs',
             hash: true
         })
